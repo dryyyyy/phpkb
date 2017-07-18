@@ -1,5 +1,5 @@
-var article = require('./routes/articles');
-var index = require('./routes/index');
+let article = require('./routes/articles');
+let index = require('./routes/index');
 
 module.exports = function (app) {
 

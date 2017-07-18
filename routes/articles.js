@@ -30,7 +30,7 @@ let getAllArticles = function (req, res) {
 
 /* Delete a user */
 let deleteUser = function (req, res) {
-	var userId = req.params.id;
+    let userId = req.params.id;
 	new Model.User().where('id', userId)
 		.destroy()
 		.catch(function (error) {
@@ -45,15 +45,39 @@ let getArticle = function (req, res) {
 	new Model.Article().where('article_id', articleId)
 		.fetch({columns: 'article_title'})
 		.then(function (article) {
-			res.json(article);
+			console.log('from getArticle: ' + getArticleTitle(3));
+			res.send(article.attributes['article_title']);
 		}).catch(function (error) {
 			console.log(error);
 			res.send('An error occured');
 		});
 };
 
-let getArticleTitle = function (req, res) {
-	
+let getArticleTitle = function (articleId) {
+    //let articleId = req.params.id;
+
+    new Model.Article().where('article_id', articleId)
+        .fetch({columns: 'article_title'})
+        .then(function (model) {
+            console.log('from getArticleTitle: ' + model.attributes['article_title']);
+            return model.attributes['article_title'];
+        }).then(function(articleTitle){
+        	return articleTitle;
+		}).catch(function (error) {
+        console.log(error);
+    });
+};
+
+let getCategory = function (categoryId){
+	new Model.Category().where('category_id', categoryId)
+		.fetch({columns: 'category_name'})
+		.then(function (model) {
+			return model.attributes['category_name'];
+        }).then(function (categoryName){
+        	return categoryName;
+		}).catch(function (error) {
+			console.log(error);
+    });
 };
 
 /* Exports all methods */
@@ -61,5 +85,7 @@ module.exports = {
 	saveUser: saveUser,
 	getAllArticles: getAllArticles,
 	deleteUser: deleteUser,
-	getArticle: getArticle
+	getArticle: getArticle,
+    getArticleTitle: getArticleTitle,
+    getCategory: getCategory
 };
