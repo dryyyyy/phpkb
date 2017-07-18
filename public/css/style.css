@@ -1,0 +1,382 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+
+/*--------HEADER----------*/
+
+header {
+  background-color: #000;
+  height: 72px;
+  text-align: center;
+}
+
+
+/*------Navigateion Menu--------*/
+
+header nav {
+  color: #FFF;
+  width: 1100px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+img {
+  display: block;
+  margin-right: 30px;
+}
+
+.top-navbar-item span {
+  float: left;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul .top-navbar-item {
+  float: left;
+}
+
+nav ul .top-navbar-item a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 26px 26px;
+  text-decoration: none;
+  height: 20px;
+}
+
+.lang-selection {
+  position: absolute;
+  width: 85px;
+  height: 100%;
+  top: 0;
+  right: 13px;
+}
+
+#current-loc {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  z-index: 10;
+  line-height: 72px;
+  padding-bottom: 3px;
+}
+
+nav ul .top-navbar-item a:hover {
+  background-color: #0CA0C6;
+  transition: 0.2s;
+}
+
+
+/*-----Language selection---------*/
+
+
+#lang-list {
+  width: 89px;
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0;
+  z-index: 1;
+}
+
+
+#current-lang-item {
+  position: relative;
+  top: -10px;
+  right: 3px;
+  height: 36px;
+  width: 36px;
+  background: url(https://img.movavi.com/movavi.com.12/images/icons/flags-lang-selection/countryballs_32x32.png) no-repeat;
+  background-position: -44px -44px;  
+}
+
+#lang-russian {
+  position: relative;
+  top: -10px;
+  right: -3px;
+  height: 36px;
+  width: 36px;
+  background: url(https://img.movavi.com/movavi.com.12/images/icons/flags-lang-selection/countryballs_32x32.png) no-repeat;
+  background-position: -173px 0px;   
+}
+
+#lang-english {
+  position: relative;
+  top: -10px;
+  right: 3px;
+  height: 36px;
+  width: 36px;
+  background: url(https://img.movavi.com/movavi.com.12/images/icons/flags-lang-selection/countryballs_32x32.png) no-repeat;
+  background-position: -44px -44px;
+}
+
+#lang-german {
+  position: relative;
+  top: -10px;
+  right: -3px;
+  height: 36px;
+  width: 36px;
+  background: url(https://img.movavi.com/movavi.com.12/images/icons/flags-lang-selection/countryballs_32x32.png) no-repeat;
+  background-position: -132px 0px;
+}
+
+#lang-french {
+  position: relative;
+  top: -10px;
+  right: 4px;
+  height: 36px;
+  width: 36px;
+  background: url(https://img.movavi.com/movavi.com.12/images/icons/flags-lang-selection/countryballs_32x32.png) no-repeat;
+  background-position: 0px -85px;
+}
+/*--------------------*/
+
+#welcoming-text {
+  font-size: 3em;
+  color: #0C6688;
+  margin: auto;
+  width: 1100px;
+}
+
+
+
+/*------Main section---------*/
+
+main {
+  width:1100px;
+  margin: auto;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#side-navbar {
+  display: inline-block;
+  width: 300px;
+  text-align: left;
+}
+
+/*-----------Left accordion menu-------------*/
+
+/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none; 
+    font-size: 16px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    border-left: #00ADE4 1px solid ;
+    background-color: #D9F5FC;
+}
+
+.accordion:hover:after {
+  float: right;
+  width: 27px;
+  height: 15px;;
+  content: "";
+  apearence: none;
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat calc(100% - 10px) !important;
+  transition: 0.2s;
+}
+
+.accordion.active::after {  
+  transform: scale(-1);
+  margin-right: 10px;
+  float: right;
+  width: 27px;
+  height: 15px;;
+  content: "";
+  apearence: none;
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat calc(100% - 10px) !important;
+  transition: 0.2s;
+}
+
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    background-color: #EEE;
+    display: none;
+    width: 280px;
+}
+
+
+.panel ul {
+  position: relative;
+}
+
+
+.submenu-item {
+  position: relative;
+  background-color: #D9F5FC;
+  margin-bottom: 3px;
+  margin-top: 2px;
+  border-radius: 5px;
+  width: 270px;
+}
+
+.submenu-item:hover {
+  background-color: #FFF;
+}
+
+.submenu-item a{
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+  position: relative;
+  left: 3px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  
+}
+
+/*---------Search----------*/
+#main-content {
+  display: inline-block;
+  float: right;
+  backgound-color: green;
+  width: 800px;
+  margin-top: 20px;
+  
+}
+
+#search-field {
+  width: 600px;
+  height: 42px;
+  font-size: 17px;
+  border: #51B960 1px solid;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+#search-button {
+  height: 45px;
+  width: 100px;
+  border:  2px #47AED0 solid;
+  border-radius: 5px;
+  background-color: #FFF;
+  transition: background-color 0.5s, color 0.5s;
+  font-size: 20px;
+  color: #47AED0;
+}
+
+#search-button:hover {
+  background-color: #00ADE4;
+  color: #FFF;
+}
+
+/*-----------FOOTER--------*/
+footer {
+  background-color: #10546B;
+  height: 300px;  
+}
+
+.container {
+  padding: 20px 0;
+  width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#three-blocks {
+  overflow: hidden;
+  float: left;  
+}
+
+.links {
+  float: left;
+  width: 230px;
+  margin-right: 25px;
+  color: #FFF;  
+}
+
+.links a{
+  text-decoration: none;
+  color: #66DBFF;
+  display: block;  
+}
+
+.copyright-wrap {
+  border-top: 1px solid #5B9FB6;
+  width: 75%;
+  margin-top: 20px;
+  color: #FFF;
+  display: inline-block;  
+}
+
+.copyright {
+  border-top: none;
+  margin: 0;  
+}
+
+.blue a, .copyright a, #store{
+  text-decoration: none;
+  color: #A2E9FF;
+}
+
+.links a:hover, .blue a:hover, .copyright a:hover, #store:hover {
+  text-decoration: underline;
+}
+
+
+#right-side-links {
+  float: right;
+  position: relative;
+  top: 40px;
+}
+
+#store {
+  position: relative;
+  left: 30px;
+}
+
+#social-icons-wrap {
+  position: relative;
+  top: 100px;
+  display: inline-block;
+  float: right;
+  padding-top: 3px;
+  height: 100px;
+  width: 250px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background: url('http://img.movavi.com/movavi.com.12/images/backgrounds/i_alt_v1.png');
+  margin: 5px;
+}
+
+#fb-icon {
+  background-position: 0 -165px;
+}
+
+#twitter-icon {
+  background-position: -40px -165px;
+}
+
+#youtube-icon {
+  background-position: -82px -165px;
+}
+
+#google-plus-icon {
+  background-position: -123px -165px;
+}
