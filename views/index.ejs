@@ -43,8 +43,18 @@
     <nav id="side-navbar">
         <ul>
             <h3>All Categories</h3>
+            <% categories.forEach(function (item) { %>
+                <button class="accordion"><%= item.attributes['category_name'] %></button>
+                <div class="panel">
+                    <ul class="side-submenu">
+                        <% articles.forEach(function(item){ %>
+                            <li class="submenu-item"><a href="#"><% item.attributes['article_title'] %>></a></li>
+                        <% }); %>
+                    </ul>
+                </div>
+            <% }); %>
             <li>
-                <button class="accordion"><%= categoryName %></button>
+                <button class="accordion"><%=  %></button>
                 <div class="panel">
                     <ul class="side-submenu">
                         <li class="submenu-item"><a href="#">What is patent activation? How to activate the patents?</a></li>

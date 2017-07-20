@@ -2,7 +2,9 @@ const path = require('path');
 const article = require(__dirname + '\\articles');
 
 let index = function (req, res) {
-	res.render('index', { categoryName: article.getCategory(1)});
+    article.getCategories().then(function(categories) {
+        res.render('index', { categories: categories});
+    });
 };
 
 module.exports.index = index;

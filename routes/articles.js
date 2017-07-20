@@ -68,14 +68,21 @@ let getArticleTitle = function (articleId) {
     });
 };
 
-let getCategory = function (categoryId){
-	new Model.Category().where('category_id', categoryId)
-		.fetch({columns: 'category_name'})
+let getCategories = function (){
+	return new Model.Category()
+		.where({'language_id': 1, 'category_show': 'yes'})
+		.fetchAll()
+		.then(function(model){
+			return model.models;
+		})
+		/*
 		.then(function (model) {
-			return model.attributes['category_name'];
-        }).then(function (categoryName){
-        	return categoryName;
-		}).catch(function (error) {
+			model.models.forEach(function(item){
+                console.log(item.attributes['category_name']);
+                return item;
+			});
+		*/
+        .catch(function (error) {
 			console.log(error);
     });
 };
@@ -87,5 +94,5 @@ module.exports = {
 	deleteUser: deleteUser,
 	getArticle: getArticle,
     getArticleTitle: getArticleTitle,
-    getCategory: getCategory
+    getCategories: getCategories
 };
