@@ -247,7 +247,7 @@ div.panel {
 }
 
 /*---------Search----------*/
-#main-content {
+#search {
   display: inline-block;
   float: right;
   backgound-color: green;

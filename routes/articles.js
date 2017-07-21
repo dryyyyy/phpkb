@@ -19,9 +19,11 @@ let saveUser = function (req, res) {
 
 /* Get all users */
 let getAllArticles = function (req, res) {
-	new Model.Article().fetchAll()
-		.then(function (articles) {
-			res.json(articles);
+	return new Model.Article()
+        .where({'language_id': 1, 'article_show': 'yes', 'article_status': 'approved'})
+		.fetchAll()
+		.then(function (model) {
+			return model.models;
 		}).catch(function (error) {
 			console.log(error);
 			res.send('An error occured');
@@ -74,15 +76,7 @@ let getCategories = function (){
 		.fetchAll()
 		.then(function(model){
 			return model.models;
-		})
-		/*
-		.then(function (model) {
-			model.models.forEach(function(item){
-                console.log(item.attributes['category_name']);
-                return item;
-			});
-		*/
-        .catch(function (error) {
+		}).catch(function (error) {
 			console.log(error);
     });
 };

@@ -43,251 +43,29 @@
     <nav id="side-navbar">
         <ul>
             <h3>All Categories</h3>
+
             <% categories.forEach(function (item) { %>
-                <button class="accordion"><%= item.attributes['category_name'] %></button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <% articles.forEach(function(item){ %>
-                            <li class="submenu-item"><a href="#"><% item.attributes['article_title'] %>></a></li>
-                        <% }); %>
-                    </ul>
-                </div>
+                <li>
+                    <button class="accordion"><%= item.attributes['category_name'] %></button>
+                    <div class="panel">
+                        <ul class="side-submenu">
+                            <% articles.forEach(function(item){ %>
+                                <% console.log(item.attributes['article_title']) %>
+                                <li class="submenu-item"><a href="#"><%= item.attributes['article_title'] %></a></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </li>
             <% }); %>
-            <li>
-                <button class="accordion"><%=  %></button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">What is patent activation? How to activate the patents?</a></li>
-                        <li class="submenu-item"><a href="#">How can I activate Movavi programs (Windows)?</a></li>
-                        <li class="submenu-item"><a href="#">Does Movavi license have any time limitations?</a></li>
-                        <li class="submenu-item"><a href="#">I’ve just lost my Activation Key. Do I need to pay again to get it back?
-                            </a></li>
-                        <li class="submenu-item"><a href="#">Can’t activate the program. The program says my Activation Key is incorrect.</a></li>
-                        <li class="submenu-item"><a href="#">I successfully activated the program. When I restarted it, it says ’Your trial version is expired’.</a></li>
-                        <li class="submenu-item"><a href="#">	How can i check if the program was activated?</a></li>
-                        <li class="submenu-item"><a href="#">How can I activate Movavi programs (Mac)?</a></li>
-                        <li class="submenu-item"><a href="#">My computer is not connected to the Internet. Can I activate Movavi program (Windows)?</a></li>
-                        <li class="submenu-item"><a href="#">My computer is not connected to the Internet. Can I activate Movavi program (Mac)?</a></li>
 
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <button class="accordion">Choosing your Program</button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">What is the difference between Video Suite and Video Editor?</a></li>
-                        <li class="submenu-item"><a href="#">Which program should I buy if I want to capture a video from my computer screen and burn it to DVD?</a></li>
-                        <li class="submenu-item"><a href="#">Which program should I buy if I want to edit video?</a></li>
-                        <li class="submenu-item"><a href="#">Can I edit photos in Movavi Video Suite?</a></li>
-                        <li class="submenu-item"><a href="#">Can’t activate the program. The program says my Activation Key is incorrect.</a></li>
-                        <li class="submenu-item"><a href="#">What is the difference between Video Suite and Audio Suite?</a></li>
-
-
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <button class="accordion">Installation Questions</button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">Can I install Movavi program on Windows 10?</a></li>
-                        <li class="submenu-item"><a href="#">Can I install Movavi program on both my desktop and laptop?</a></li>
-                        <li class="submenu-item"><a href="#">My anti-virus program says that your file can be dangerous for my computer. What is the problem?</a></li>
-                        <li class="submenu-item"><a href="#">How can I change language of the program?</a></li>
-                        <li class="submenu-item"><a href="#">How can I get the free trial version of the software?</a></li>
-                        <li class="submenu-item"><a href="#">Do I need to uninstall the previous version first before update?</a></li>
-                        <li class="submenu-item"><a href="#">How can I install Movavi programs (Mac)?</a></li>
-                        <li class="submenu-item"><a href="#">I can’t install the program because of the corrupted installer.</a></li>
-                        <li class="submenu-item"><a href="#">Do you have a manual for the programs?</a></li>
-                        <li class="submenu-item"><a href="#">How can I install Movavi programs (Windows)?</a></li>
-                        <li class="submenu-item"><a href="#">I want to install Movavi on my Mac computer, but it says it can’t find the appropriate application to open the installation file.</a></li>
-                        <li class="submenu-item"><a href="#">A few errors occurred during the installation. Now the program says it can’t create object.</a></li>
-                </div>
-            </li>
-            <li>
-                <button class="accordion">Movavi Photo Products</button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">OpenGL issues</a></li>
-                        <li class="submenu-item"><a href="#">A small window stating "404 Not Found" blocks the program after launch</a></li>
-                        <li class="submenu-item"><a href="#">Program interface is too large or too small for my screen (DPI issues)</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <button class="accordion">Movavi Products for Mac</button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">How can I activate Movavi programs (Mac)?</a></li>
-                        <li class="submenu-item"><a href="#">How can I install Movavi programs (Mac)?</a></li>
-                        <li class="submenu-item"><a href="#">My computer is not connected to the Internet. Can I activate Movavi program (Mac)?</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <button class="accordion">Movavi Screen Capture</button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">I cannot launch the program after updating Windows 10</a></li>
-                        <li class="submenu-item"><a href="#">I receive error message when I start/stop recording my screen</a></li>
-                        <li class="submenu-item"><a href="#">Recorded file has no video, only audio is playing</a></li>
-                        <li class="submenu-item"><a href="#">Recorded video and audio are out of sync</a></li>
-                        <li class="submenu-item"><a href="#">Capturing error/crash dump appears after I start recording</a></li>
-                        <li class="submenu-item"><a href="#">Quality of recorded video is low</a></li>
-                        <li class="submenu-item"><a href="#">Can I schedule start time and duration of my screen recording?</a></li>
-                        <li class="submenu-item"><a href="#">I receive message ’program is already running’ when trying to launch Screen Capture</a></li>
-                        <li class="submenu-item"><a href="#">Quality of recorded audio is low</a></li>
-                        <li class="submenu-item"><a href="#">Cannot save recorded file into media format</a></li>
-                        <li class="submenu-item"><a href="#">Is it possible to record from several screens (monitors) at once?</a></li>
-                        <li class="submenu-item"><a href="#">How can I make a screenshot in Movavi Screen Capture?</a></li>
-                        <li class="submenu-item"><a href="#">I am using Windows XP and cannot record system audio</a></li>
-                        <li class="submenu-item"><a href="#">Screen Capture crashes when I start recording presentation in MS PowerPoint</a></li>
-                        <li class="submenu-item"><a href="#">A small window stating "404 Not Found" blocks the program after launch</a></li>
-                        <li class="submenu-item"><a href="#">Program interface is too large or too small for my screen (DPI issues)</a></li>
-                        <li class="submenu-item"><a href="#">I cannot enable recording from audio devices</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <button class="accordion">Movavi Video Converter</button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">I cannot launch the program after updating Windows 10</a></li>
-                        <li class="submenu-item"><a href="#">How to update GPU Drivers?</a></li>
-                        <li class="submenu-item"><a href="#">OpenGL issues</a></li>
-                        <li class="submenu-item"><a href="#">I tried to convert the video but got an error ’External conversion module does not respond’.</a></li>
-                        <li class="submenu-item"><a href="#">Why Protected DVD can not be converted?</a></li>
-                        <li class="submenu-item"><a href="#">How to add subtitles to video?</a></li>
-                        <li class="submenu-item"><a href="#">To what format should I convert video to preserve the best quality possible?</a></li>
-                        <li class="submenu-item"><a href="#">There is no audio in the converted file</a></li>
-                        <li class="submenu-item"><a href="#">Can not enable CUDA acceleration</a></li>
-                        <li class="submenu-item"><a href="#">The video and audio tracks are out of sync when I play the converted video file.</a></li>
-                        <li class="submenu-item"><a href="#">Can I increase the volume of the output video?</a></li>
-                        <li class="submenu-item"><a href="#">How long does it take to convert the file?</a></li>
-                        <li class="submenu-item"><a href="#">The quality of converted file is rather poor. How can I increase the quality?</a></li>
-                        <li class="submenu-item"><a href="#">I can’t launch the program. I double-click the icon but nothing happens. What’s wrong?</a></li>
-                        <li class="submenu-item"><a href="#">How can I reduce size of the output video?</a></li>
-                        <li class="submenu-item"><a href="#">When I add file there is the error: Can’t open file. Unknown format or corrupted file.</a></li>
-                        <li class="submenu-item"><a href="#">How many files can I convert simultaneously in Converter?</a></li>
-                        <li class="submenu-item"><a href="#">What GPU I have?</a></li>
-                        <li class="submenu-item"><a href="#">Why I cannot select Xvid codec for my output file?</a></li>
-                        <li class="submenu-item"><a href="#">How to reinstall the program?</a></li>
-                        <li class="submenu-item"><a href="#">Why MP4 should have 4Gb limitation?</a></li>
-                        <li class="submenu-item"><a href="#">Converted files can’t be played in any program.</a></li>
-                        <li class="submenu-item"><a href="#">How can I change the frame size of the output video?</a></li>
-                        <li class="submenu-item"><a href="#">How to trim video or audio files</a></li>
-                        <li class="submenu-item"><a href="#">When I convert my video the program says: Can’t write the output file.</a></li>
-                        <li class="submenu-item"><a href="#">There are "black bars" on the converted video. What should I do?</a></li>
-                        <li class="submenu-item"><a href="#">Can I define an audio track before conversion?</a></li>
-                        <li class="submenu-item"><a href="#">How to disable Acceleration options?</a></li>
-                        <li class="submenu-item"><a href="#">When I add file there is the error: File not found.</a></li>
-                        <li class="submenu-item"><a href="#">Video Converter shuts in the middle of conversion.</a></li>
-                        <li class="submenu-item"><a href="#">How to stabilize video (reduce camera shake)</a></li>
-                        <li class="submenu-item"><a href="#">Progressive download option for videos</a></li>
-                        <li class="submenu-item"><a href="#">Is it possible to adjust metadata for converted file?</a></li>
-                        <li class="submenu-item"><a href="#">A small window stating "404 Not Found" blocks the program after launch</a></li>
-                        <li class="submenu-item"><a href="#">Program interface is too large or too small for my screen (DPI issues)</a></li>
-                        <li class="submenu-item"><a href="#">Is H.265 (HEVC) codec supported with Movavi programs?</a></li>
-                        <li class="submenu-item"><a href="#">How do I cancel my monthly subscription to Movavi Video Converter ?</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <button class="accordion">Movavi Video Editor</button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">"An unknown error occured" during the export. I cannot save and export my project.</a></li>
-                        <li class="submenu-item"><a href="#">I cannot launch the program after updating Windows 10</a></li>
-                        <li class="submenu-item"><a href="#">OpenGL issues</a></li>
-                        <li class="submenu-item"><a href="#">Editor crashes during launch.</a></li>
-                        <li class="submenu-item"><a href="#">My imported videofile has no video/audio in Editor.</a></li>
-                        <li class="submenu-item"><a href="#">Video and audio in resulting file are out of sync.</a></li>
-                        <li class="submenu-item"><a href="#">Exported file has no video, but I can hear audio playing.</a></li>
-                        <li class="submenu-item"><a href="#">Editor crashes mid-exporting or not exporting at all.</a></li>
-                        <li class="submenu-item"><a href="#">I want to add overlays</a></li>
-                        <li class="submenu-item"><a href="#">How can I use Chroma Key?</a></li>
-                        <li class="submenu-item"><a href="#">Project exporting goes very slow</a></li>
-                        <li class="submenu-item"><a href="#">I want to reverse video</a></li>
-                        <li class="submenu-item"><a href="#">Video in output file has black bars or surrounded by black rectangle</a></li>
-                        <li class="submenu-item"><a href="#">How to switch between integrated and dedicated video cards</a></li>
-                        <li class="submenu-item"><a href="#">How to cut a video</a></li>
-                        <li class="submenu-item"><a href="#">How to add titles</a></li>
-                        <li class="submenu-item"><a href="#">Managing audio tracks</a></li>
-                        <li class="submenu-item"><a href="#">How to export videos</a></li>
-                        <li class="submenu-item"><a href="#">A small window stating "404 Not Found" blocks the program after launch</a></li>
-                        <li class="submenu-item"><a href="#">Program interface is too large or too small for my screen (DPI issues)</a></li>
-                        <li class="submenu-item"><a href="#">How to get rid of the trial watermark</a></li>
-                        <li class="submenu-item"><a href="#">How to add callouts</a></li>
-                        <li class="submenu-item"><a href="#">How to conceal or highlight parts of your video</a></li>
-                        <li class="submenu-item"><a href="#">Audio noise removal</a></li>
-                        <li class="submenu-item"><a href="#">Project settings
-                            </a></li>
-                        <li class="submenu-item"><a href="#">My audio clip appears on the video track</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <button class="accordion">Movavi Video Suite</button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">I cannot launch the program after updating Windows 10</a></li>
-                        <li class="submenu-item"><a href="#">OpenGL issues</a></li>
-                        <li class="submenu-item"><a href="#">I receive a message "Your graphics card driver is out of date, which may cause performance issues."</a></li>
-                        <li class="submenu-item"><a href="#">I want to reverse video</a></li>
-                        <li class="submenu-item"><a href="#">How to switch between integrated and dedicated video cards
-                            </a></li>
-                        <li class="submenu-item"><a href="#">I click on Activate button in Video Suite main menu, but activation does not start</a></li>
-                        <li class="submenu-item"><a href="#">All of the modules in Video Suite except Editor work file - when I launch Editor I receive Windows error message</a></li>
-                        <li class="submenu-item"><a href="#">I receive Windows error message when trying to launch Video Suite main menu</a></li>
-                        <li class="submenu-item"><a href="#">A small window stating "404 Not Found" blocks the program after launch</a></li>
-                        <li class="submenu-item"><a href="#">I receive error message ’cannot connect to server’ after closing Video Suite</a></li>
-                        <li class="submenu-item"><a href="#">Program interface is too large or too small for my screen (DPI issues)</a></li>
-                        <li class="submenu-item"><a href="#">Is H.265 (HEVC) codec supported with Movavi programs?</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <button class="accordion">Movavi Sales Questions</button>
-                <div class="panel">
-                    <ul class="side-submenu">
-                        <li class="submenu-item"><a href="#">What payment methods do you accept?</a></li>
-                        <li class="submenu-item"><a href="#">I want to move the program to another PC</a></li>
-                        <li class="submenu-item"><a href="#">What is the difference between Personal and Business license?</a></li>
-                        <li class="submenu-item"><a href="#">What is Download Insurance Service?</a></li>
-                        <li class="submenu-item"><a href="#">What are the prices for Movavi programs?</a></li>
-                        <li class="submenu-item"><a href="#">What is the Subscription? How does it work?</a></li>
-                        <li class="submenu-item"><a href="#">How can I get my money back?</a></li>
-                        <li class="submenu-item"><a href="#">Why to buy a Business license?</a></li>
-                        <li class="submenu-item"><a href="#">How to upgrade the program?</a></li>
-                        <li class="submenu-item"><a href="#">I want to install your program on PC and laptop to use it at the same time.</a></li>
-                        <li class="submenu-item"><a href="#">What is a Personal license?</a></li>
-                        <li class="submenu-item"><a href="#">When will the credit appear on my credit card?</a></li>
-                        <li class="submenu-item"><a href="#">What are the trial limitations?</a></li>
-                        <li class="submenu-item"><a href="#">I purchased Movavi program on-line, but received no order confirmation or activation key.</a></li>
-                        <li class="submenu-item"><a href="#">How are Movavi programs licensed?</a></li>
-                        <li class="submenu-item"><a href="#">Can I purchase the second license for discounted price?</a></li>
-                        <li class="submenu-item"><a href="#">Can I order without a credit card?</a></li>
-                        <li class="submenu-item"><a href="#">I have just purchased the wrong program. Can you give me the refund to purchase the right program?</a></li>
-                        <li class="submenu-item"><a href="#">Your software does not do what I need, I would like my payment refunded.</a></li>
-                        <li class="submenu-item"><a href="#">How to receive your program(s) on CD?</a></li>
-                        <li class="submenu-item"><a href="#">Should I put spaces or dashes in the Credit Card number?</a></li>
-                        <li class="submenu-item"><a href="#">What address should I enter in the billing information screen?</a></li>
-                        <li class="submenu-item"><a href="#">What is Avangate?</a></li>
-                        <li class="submenu-item"><a href="#">How do I enter a shipping address?</a></li>
-                        <li class="submenu-item"><a href="#">Do I have to pay sales tax?</a></li>
-                        <li class="submenu-item"><a href="#">How can I get the free trial version of the software?</a></li>
-                        <li class="submenu-item"><a href="#">When will I receive my purchased program?</a></li>
-                        <li class="submenu-item"><a href="#">How long will it take to get your support response?</a></li>
-                        <li class="submenu-item"><a href="#">How do I cancel my monthly subscription to Movavi Video Converter ?</a></li>
-                    </ul>
-                </div>
-            </li>
         </ul>
     </nav>
-    <div id="main-content">
+    <div id="search">
         <input id="search-field" placeholder="Search..." />
         <button id="search-button">Search</button>
+    </div>
+    <div id="content">
+
     </div>
 </main>
 <footer>
