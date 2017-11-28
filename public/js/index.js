@@ -7,9 +7,13 @@ $(document).ready(function(){
       $('.accordion').removeClass("active");
       $('.panel').slideUp();
       $(this).siblings().slideDown();
-      $(this).addClass("active");      
+      $(this).addClass("active");
     }
-  })
+
+    $.get('/' + $(this).attr('id') + '');
+    console.log('/:' + $(this).attr('id') + '');
+
+  });
   
   $('#lang-selection-dropdown').on("click", function(){
     if($(this).hasClass("open")){
@@ -21,4 +25,4 @@ $(document).ready(function(){
     }
   })
   
-})
+});

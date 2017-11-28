@@ -1,28 +1,15 @@
-const Model = require('./../models/Articles');
-
-/* Save a user */
-let saveUser = function (req, res) {
-	new Model.User({
-		username: req.body.username,
-		email: req.body.email,
-		name: req.body.name,
-		age: req.body.age,
-		location: req.body.location
-	}).save()
-		.then(function (user) {
-			res.json(user);
-		}).catch(function (error) {
-			console.log(error);
-			res.send('An error occured');
-		});
-};
+const Model = require('../models/Models');
 
 /* Get all users */
 let getAllArticles = function (req, res) {
+	console.log(req);
+
 	return new Model.Article()
-        .where({'language_id': 1, 'article_show': 'yes', 'article_status': 'approved'})
-		.fetchAll()
+		.where({'language_id': 1, 'article_show': 'yes', 'article_status': 'approved'})
+        .fetchAll({withRelated: ['category']})
 		.then(function (model) {
+			model.models.forEach(function(item){
+			});
 			return model.models;
 		}).catch(function (error) {
 			console.log(error);
@@ -43,7 +30,8 @@ let deleteUser = function (req, res) {
 
 /* Get a user */
 let getArticle = function (req, res) {
-	let articleId = req.params.id;
+	let articleId = req.query.id;
+	console.log(req.params.id);
 	new Model.Article().where('article_id', articleId)
 		.fetch({columns: 'article_title'})
 		.then(function (article) {
@@ -61,7 +49,6 @@ let getArticleTitle = function (articleId) {
     new Model.Article().where('article_id', articleId)
         .fetch({columns: 'article_title'})
         .then(function (model) {
-            console.log('from getArticleTitle: ' + model.attributes['article_title']);
             return model.attributes['article_title'];
         }).then(function(articleTitle){
         	return articleTitle;
@@ -73,8 +60,9 @@ let getArticleTitle = function (articleId) {
 let getCategories = function (){
 	return new Model.Category()
 		.where({'language_id': 1, 'category_show': 'yes'})
-		.fetchAll()
+		.fetchAll({withRelated: ['articles']})
 		.then(function(model){
+			//console.log(model.models[0]);
 			return model.models;
 		}).catch(function (error) {
 			console.log(error);
@@ -83,7 +71,7 @@ let getCategories = function (){
 
 /* Exports all methods */
 module.exports = {
-	saveUser: saveUser,
+	//saveUser: saveUser,
 	getAllArticles: getAllArticles,
 	deleteUser: deleteUser,
 	getArticle: getArticle,

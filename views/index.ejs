@@ -46,11 +46,10 @@
 
             <% categories.forEach(function (item) { %>
                 <li>
-                    <button class="accordion"><%= item.attributes['category_name'] %></button>
+                    <button class="accordion" id="<%= item.attributes['category_id']%>"><%= item.attributes['category_name'] %></button>
                     <div class="panel">
                         <ul class="side-submenu">
                             <% articles.forEach(function(item){ %>
-                                <% console.log(item.attributes['article_title']) %>
                                 <li class="submenu-item"><a href="#"><%= item.attributes['article_title'] %></a></li>
                             <% }); %>
                         </ul>

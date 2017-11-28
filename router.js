@@ -10,6 +10,6 @@ module.exports = function (app) {
 //  app.post('/users', user.saveUser);
 	app.get('/articles', article.getAllArticles);
 //  app.delete('/user/:id', user.deleteUser);
-	app.get('/article/:id', article.getArticle);
+	app.get('/:id', article.getAllArticles);
 };
 
